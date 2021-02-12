@@ -1,0 +1,264 @@
+[
+  {
+    "@id": "dtmi:demoapp:Uploadin;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:demoapp:Uploadin:firmwareVersion;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Firmware Version"
+        },
+        "name": "firmwareVersion",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:updateFirmware;1",
+        "@type": "Command",
+        "displayName": {
+          "en": "Update Firmware"
+        },
+        "name": "updateFirmware",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Firmware URL"
+          },
+          "name": "firmwareUrl",
+          "schema": "dtmi:demoapp:Uploadin:schemas:firmwareVersions;1"
+        }
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:requestUpload;1",
+        "@type": "Command",
+        "displayName": {
+          "en": "Request Upload"
+        },
+        "name": "requestUpload",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "NBA Logo"
+          },
+          "name": "fileName",
+          "schema": "dtmi:demoapp:Uploadin:schemas:uploadRequests;1"
+        }
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:lastUploadFile;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Last upload File"
+        },
+        "name": "lastUploadFile",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:fileUploadEvent;1",
+        "@type": [
+          "Telemetry",
+          "Event"
+        ],
+        "displayName": {
+          "en": "File Upload Event"
+        },
+        "name": "fileUploadEvent",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:fileUploadHistory;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "File Upload History"
+        },
+        "name": "fileUploadHistory",
+        "schema": {
+          "@id": "dtmi:demoapp:Uploadin:fileUploadHistory:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:demoapp:Uploadin:fileUploadHistory:schema:fileName;1",
+              "displayName": {
+                "en": "File Name"
+              },
+              "name": "fileName",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:demoapp:Uploadin:fileUploadHistory:schema:fileUrl;1",
+              "displayName": {
+                "en": "File URL"
+              },
+              "name": "fileUrl",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:demoapp:Uploadin:fileUploadHistory:schema:uploadStatusCode;1",
+              "displayName": {
+                "en": "Upload Status Code"
+              },
+              "name": "uploadStatusCode",
+              "schema": "integer"
+            }
+          ]
+        }
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:cpuUsage;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "CPU Usage"
+        },
+        "name": "cpuUsage",
+        "schema": "integer",
+        "unit": "percent"
+      }
+    ],
+    "schemas":[
+      {
+        "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions;1",
+        "@type": "Enum",
+        "displayName": {
+          "en": "Enum"
+        },
+        "enumValues": [
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v100;1",
+            "displayName": {
+              "en": "1.0.0"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.0",
+            "name": "v100"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v101;1",
+            "displayName": {
+              "en": "1.0.1"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.1",
+            "name": "v101"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v102;1",
+            "displayName": {
+              "en": "1.0.2"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.2",
+            "name": "v102"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v103;1",
+            "displayName": {
+              "en": "1.0.3"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.3",
+            "name": "v103"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v104;1",
+            "displayName": {
+              "en": "1.0.4"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.4",
+            "name": "v104"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v105;1",
+            "displayName": {
+              "en": "1.0.5"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.5",
+            "name": "v105"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v106;1",
+            "displayName": {
+              "en": "1.0.6"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.6",
+            "name": "v106"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:firmwareVersions:v107;1",
+            "displayName": {
+              "en": "1.0.7"
+            },
+            "enumValue": "https://storageaccountkprembd8b.blob.core.windows.net/download/1.0.7",
+            "name": "v107"
+          }
+        ],
+        "valueSchema": "string"
+      },
+      {
+        "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests;1",
+        "@type": "Enum",
+        "displayName": {
+          "en": "Enum"
+        },
+        "enumValues": [
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests:bulls;1",
+            "displayName": {
+              "en": "Chicago Bulls Logo"
+            },
+            "enumValue": "bulls.png",
+            "name": "bulls"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests:celtics;1",
+            "displayName": {
+              "en": "Boston Celtics Logo"
+            },
+            "enumValue": "celtics.gif",
+            "name": "celtics"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests:hawks;1",
+            "displayName": {
+              "en": "Atlanta Hawks Logo"
+            },
+            "enumValue": "hawks.png",
+            "name": "hawks"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests:knicks;1",
+            "displayName": {
+              "en": "New York Knicks Logo"
+            },
+            "enumValue": "knicks.png",
+            "name": "knicks"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests:lakers;1",
+            "displayName": {
+              "en": "Los Angeles Lakers Logo"
+            },
+            "enumValue": "lakers.png",
+            "name": "lakers"
+          },
+          {
+            "@id": "dtmi:demoapp:Uploadin:schemas:uploadRequests:rockets;1",
+            "displayName": {
+              "en": "Houston Rockets Logo"
+            },
+            "enumValue": "rockets.png",
+            "name": "rockets"
+          }
+        ],
+        "valueSchema": "string"
+      }
+    ],
+    "displayName": {
+      "en": "Upload"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]

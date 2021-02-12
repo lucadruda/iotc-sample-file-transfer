@@ -1,0 +1,12 @@
+# node
+node_modules/
+dist/
+
+# env
+env.json
+store.txt
+downloads/
+
+# vscode
+.vscode
+debug.log
