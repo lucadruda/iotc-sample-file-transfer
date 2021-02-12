@@ -100,6 +100,7 @@ const onCommandReceived = async function (cmd: IIoTCCommand) {
       // do an upload
       const fileName = cmd.requestPayload.toString().replace(/\"/g, ""); // remove quotes
       console.log(`Uploading file ${fileName}...`);
+      await cmd.reply(IIoTCCommandResponse.SUCCESS, "Request received");
       const res = await iotc.uploadFile(
         fileName,
         path.join(__dirname, "..", "uploads", fileName)
@@ -123,7 +124,6 @@ const onCommandReceived = async function (cmd: IIoTCCommand) {
         });
         await iotc.sendProperty({ lastUploadFile: res.destinationPath });
       }
-      await cmd.reply(IIoTCCommandResponse.SUCCESS, "Completed");
       break;
   }
 };

@@ -1,7 +1,7 @@
 {
-  "name": "roche_file_transfer",
+  "name": "iotc-sample-file-transfer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple device sample about file transfer in Azure IoT Central",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "start": "nodemon -e txt,bin dist/index.js",
     "prepare": "npm run build"
   },
-  "author": "",
+  "author": "Luca Druda",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^14.14.27",

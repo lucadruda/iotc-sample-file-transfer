@@ -1,5 +1,7 @@
 # Azure IoT Central file transfer device sample
+This sample demonstrates how to use file transfer capabilities with an IoT Central app. Azure IoT Central takes advantage of the file upload feature of IoT Hub. For file download, this sample shows a common approach for the "firmware update" scenario.
 
+For a full description of the IoT Central File Upload feature see the [documentation online](https://aka.ms/iotcentral-file-upload).
 ## Prerequisites
 
 - Node.js (12+)
@@ -14,6 +16,16 @@ git clone https://github.com/lucadruda/iotc-sample-file-transfer
 cd iotc-sample-file
 npm install # this will also build code
 ```
+
+Build can also be triggered with
+
+```sh
+npm run build
+```
+
+### Prepare IoT Central application
+
+Follow the [instructions](./docs/central_app.md) to create an IoT Central application.
 
 ### Setup device credentials
 
@@ -39,9 +51,23 @@ From root folder run:
 npm run start
 ```
 
-## File transfer
+## File transfers
 
-The repository contains an "_uploads_" folder that contains some sample images to upload from device.
-File are named based on device capability model ([Upload.json](./Upload.json)).
+### Requesting file upload
+
+This repository contains an "_uploads_" folder that contains some sample images to upload from device.
+File are named based on device capability model ([Upload.json](./Upload.json)) parameters.
+Select a file to upload and hit "Run".
+
+![fig.1](./media/upload_request.jpg)
+
+### Simulate firmware update
 
 When a firmware update request is received, the new firmware gets downloaded into the "_downloads_" folder and device restarts.
+The current firmware version gets saved in the "_store.txt_" file and sent to IoT Central when device starts or reboots.
+
+![fig.2](./media/update_firmware.jpg)
+
+Current device firmware along with file upload history can be seen in a dashboard like the below one.
+
+![fig.3](./media/overview.jpg)
