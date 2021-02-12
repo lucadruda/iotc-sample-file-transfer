@@ -12,7 +12,6 @@ Follow the instructions below to create an IoT Central application and associate
 - Select the "Next: Review" button
 - Select the "Create" button
 - Select the "Import capability model" option. The device template is included in the repository at [Upload.json](../Upload.json).
-
   ![import_model](../media/import_model.jpg)
   After importing the device template you need to create a view on the telemetry and properties the device will send and receive. See the documentation to Create and manage dashboards in IoT Central. Create a dashboard view for Visualizing the device
 
@@ -20,6 +19,7 @@ Follow the instructions below to create an IoT Central application and associate
 - Select the "Visualize the device" option
 - Select telemetries and properties to show and select "Add tile" to add them to the current dashboard.
   e.g. select "CPU Usage" and "File Upload Event" telemetries and add tile to show these two values in a chart.
+  
   ![add_telemetry](../media/add_telemetry.jpg)
   Select properties to also add property views to the dashboard. Commands dashboard will be automatically created.
 - Select the "Save" option for this view.
