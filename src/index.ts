@@ -137,7 +137,7 @@ const onConnectionStatusChanged = async function (
 async function run() {
   const firmV = await readFirmwareVersion();
   console.log(`Roche device v${firmV}.`);
-  console.log(`Connecting device ${envData.modelId}...`);
+  console.log(`Connecting device ${envData.deviceId}...`);
   iotc.on(IOTC_EVENTS.Properties, onPropertyUpdated);
   iotc.on(IOTC_EVENTS.Commands, onCommandReceived);
   iotc.on(IOTC_EVENTS.ConnectionStatus, onConnectionStatusChanged);
